@@ -27,6 +27,8 @@ export default {
 
 <style lang="scss">
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&display=swap');
+
 /* width */
 ::-webkit-scrollbar {
   width: 0px !important;
@@ -42,6 +44,7 @@ export default {
 
 html, body {
   height: 100%;
+  font-family: 'Barlow Condensed', sans-serif;  
 }
 
 #__nuxt, #__layout {
