@@ -1,6 +1,6 @@
 <template>
   <div class="pa-10">
-    Home
+    Teams
   </div>
 </template>
 
@@ -10,6 +10,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style>
 
 </style>

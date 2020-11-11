@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="pa-10">
     Ranks
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div class="pa-10 menu">
-    <v-btn>
+    <v-btn to="/">
       Edge
     </v-btn>
     <v-btn class="ml-4" color="primary" dark x-small v-for="(item, index) in menuItems" :key="index" :to="item.value">
@@ -48,6 +48,16 @@ export default {
           id: 7,
           title: 'Logs',
           value: '/logs'
+        },
+        {
+          id: 8,
+          title: 'Settings',
+          value: '/settings'
+        },
+        {
+          id: 9,
+          title: 'Teams',
+          value: '/teams'
         }
       ]
     }
