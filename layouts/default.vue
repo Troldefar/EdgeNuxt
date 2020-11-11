@@ -1,10 +1,14 @@
 <template>
   <div class="main">
-    
+    <Menu />
+    <nuxt />
   </div>
 </template>
 
 <script>
+
+import Menu from '@/components/Menu/Menu';
+
 export default {
   mounted () {
     this.$axios.get('/api/')
@@ -14,6 +18,9 @@ export default {
       .catch(error => {
         console.log(error);
       });
+  },
+  components: {
+    Menu
   }
 }
 </script>
