@@ -51,7 +51,27 @@ export default {
   color: white;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&display=swap');
+.pa-5 {
+  padding: 1rem;
+}
+
+.pa-10 {
+  padding: 1rem;
+}
+
+.greenishBackground {
+  background: rgb(43, 143, 46);
+}
+
+.blueishBackground {
+  background: rgb(36, 92, 142);
+}
+
+.purpleishBackground {
+  background: rgb(103, 36, 103);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 
 /* width */
 ::-webkit-scrollbar {
@@ -68,7 +88,7 @@ export default {
 
 html, body {
   height: 100%;
-  font-family: 'Barlow Condensed', sans-serif;  
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 #__nuxt, #__layout {
@@ -96,10 +116,6 @@ html, body {
     flex: 8;
     position: relative;
   }
-}
-
-.pa-10 {
-  padding: 1rem;
 }
 
 @media screen and (max-width: 1100px) {

@@ -17,7 +17,7 @@
       @click="route(item.title)"
       text
     >
-      <v-icon small class="mr-2 white-text" style="color:white;">
+      <v-icon class="mr-2 white-text" style="color:white;">
         {{ item.icon }}
       </v-icon>
       {{ item.title }}
@@ -34,57 +34,43 @@ export default {
     return {
       menuItems: [
         {
-          id: 1,
+          title: 'Game',
+          icon: 'mdi-keyboard-variant'
+        },
+        {
           title: 'Statistics',
-          value: '/statistics',
           icon: 'mdi-chart-areaspline'
         },
         {
-          id: 2,
           title: 'Themes',
-          value: '/themes',
           icon: 'mdi-brush'
         },
         {
-          id: 3,
           title: 'Friends',
-          value: '/friends',
           icon: 'mdi-human-male-male'
         },
         {
-          id: 4,
           title: 'Ranks',
-          value: '/ranks',
           icon: 'mdi-clipboard-list-outline'
         },
         {
-          id: 5,
           title: 'Badges',
-          value: '/badges',
           icon: 'mdi-shield-half-full'
         },
         {
-          id: 6,
           title: 'Earnings',
-          value: '/earnings',
           icon: 'mdi-cash-register'
         },
         {
-          id: 7,
           title: 'Logs',
-          value: '/logs',
           icon: 'mdi-format-list-numbered'
         },
         {
-          id: 8,
           title: 'Settings',
-          value: '/settings',
           icon: 'mdi-cog-clockwise'
         },
         {
-          id: 9,
           title: 'Teams',
-          value: '/teams',
           icon: 'mdi-handshake'
         }
       ]
@@ -106,6 +92,7 @@ export default {
   display: flex;
   flex-direction: column;
   position: relative;
+  user-select: none;
 
   .menuTab {
     cursor: pointer;
