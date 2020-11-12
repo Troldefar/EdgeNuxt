@@ -60,7 +60,7 @@
                 label="Deathmatch"
               />
             </div>
-            <div v-else-if="currentGameSettings === 'League of legends'">
+            <div v-else-if="currentGameSettings === 'League of Legends'">
               <v-switch
                 v-model="voiceChatLol"
                 label="Voice chat"
@@ -131,17 +131,17 @@ export default {
       games: [
         {
           title: 'CS:GO',
-          image: 'https://dmarket.com/blog/best-csgo-wallpapers/cs-go-wallpaper_hub6d22fdcaa8629b6f1a6781f6a106093_183473_1920x1080_resize_q75_lanczos.jpg',
+          image: '/static/images/CounterStrike/csgo.jpg',
           cog: 'mdi-cog-clockwise'
         },
         {
-          title: 'League of legends',
-          image: 'https://cdn.guidingtech.com/imager/assets/196284/Best-League-of-Legends-Wallpapers-2_4d470f76dc99e18ad75087b1b8410ea9.png?1526290837',
+          title: 'League of Legends',
+          image: '/static/images/LeagueOfLegends/leagueoflegends.png',
           cog: 'mdi-cog-clockwise'
         },
         {
           title: 'World Of Warcraft',
-          image: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4a8b89eb-212e-48ac-b1d8-0554cbe12ff1/dcdmkmg-ecddde99-b9a6-460b-852a-0b8fa7c7ee87.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRhOGI4OWViLTIxMmUtNDhhYy1iMWQ4LTA1NTRjYmUxMmZmMVwvZGNkbWttZy1lY2RkZGU5OS1iOWE2LTQ2MGItODUyYS0wYjhmYTdjN2VlODcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.kKU1lcAMuxf0F3evMkuW985VYBsxLHzEjkV7WCcsSsE',
+          image: '/static/images/WorldOfWarcraft/worldofwarcraft.jpg',
           cog: 'mdi-cog-clockwise'
         },
       ],
