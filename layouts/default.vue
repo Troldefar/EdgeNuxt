@@ -1,13 +1,18 @@
 <template>
   <div class="main">
-    <Menu />
-    <nuxt />
+    <div class="menu">
+      <Menu />
+    </div>
+    <div class="content">
+      <nuxt />
+    </div>
   </div>
 </template>
 
 <script>
 
 import Menu from '@/components/Menu/Menu';
+import User from '@/components/Menu/User';
 
 export default {
   mounted () {
@@ -20,12 +25,31 @@ export default {
       });
   },
   components: {
-    Menu
+    Menu,
+    User
   }
 }
 </script>
 
 <style lang="scss">
+
+/* Globals */
+
+.mr-2 {
+  margin-right: 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.font-weight-light {
+  font-weight: light;
+}
+
+.white-text {
+  color: white;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200&display=swap');
 
@@ -37,7 +61,7 @@ export default {
 /* Coolors */
 
 :root {
-  --main-color: #202c39;
+  --main-color: #3f5872;
   --main-font: #f0efeb;
   --main-font-size: 1rem;
 }
@@ -52,11 +76,35 @@ html, body {
 }
 
 .main {
-  background-color: var(--main-color);
   height: 100%;
+  display: flex;
+
+  .menu {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    background: rgb(35, 34, 34);
+
+    .CurrentUser {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+    }
+  }
+
+  .content {
+    flex: 8;
+    position: relative;
+  }
 }
 
 .pa-10 {
   padding: 1rem;
+}
+
+@media screen and (max-width: 1100px) {
+  body {
+    display: none;
+  }
 }
 </style>

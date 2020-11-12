@@ -1,10 +1,5 @@
 <template>
-  <div class="pa-10">
-    Statistics
-    <p>
-      
-    </p>
-  </div>
+  
 </template>
 
 <script>
