@@ -8,10 +8,10 @@
       Edge
     </v-btn>
     <User />
-    <span
+    <p
       color="primary"
       small
-      class="mt-2 mb-2 white-text menuTab font-weight-light"
+      class="mt-2 mb-2 white-text menuTab"
       v-for="(item, index) in menuItems" 
       :key="index" 
       @click="route(item.title)"
@@ -21,7 +21,7 @@
         {{ item.icon }}
       </v-icon>
       {{ item.title }}
-    </span>
+    </p>
   </div>
 </template>
 
@@ -96,6 +96,7 @@ export default {
 
   .menuTab {
     cursor: pointer;
+    font-size: 0.7rem;
     transition: all 0.3s ease-in;
   }
 

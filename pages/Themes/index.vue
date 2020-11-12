@@ -27,6 +27,18 @@
           v-model="notifications"
           label="Notifications"
         />
+        <v-switch
+          v-model="readyToGame"
+          label="Ready to game"
+        />
+        <v-switch
+          v-model="visible"
+          label="Visible"
+        />
+        <v-switch
+          v-model="invitesAllowed"
+          label="Invites allowed"
+        />
       </v-card>
     </v-dialog>
   </div>
@@ -36,7 +48,12 @@
 export default {
   data () {
     return {
-      dialog: false
+      dialog: false,
+      darkMode: true,
+      notifications: false,
+      readyToGame: false,
+      visible: false,
+      invitesAllowed: false
     }
   }
 }
@@ -52,6 +69,7 @@ export default {
   .customizeTheme {
     height: 60vh;
     width: 60vw;
+    background: red;
   }
 }
 </style>

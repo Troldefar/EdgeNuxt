@@ -1,7 +1,9 @@
 <template>
   <div dark class="UserInformation mt-2 mb-2">
-    Rasmus
-    <div>
+    <p class="menuTab">
+      Rasmus (Admin)
+    </p>
+    <div class="menuTab">
       Status: Online
     </div>
   </div>

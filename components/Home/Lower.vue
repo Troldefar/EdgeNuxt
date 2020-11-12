@@ -32,15 +32,15 @@
         Quickchat
       </p>
       <hr>
-      <p class="logText mt-2 mb-2">
+      <p class="logText mt-2">
         10:22 - Josh: Wanna game? 
-        <v-btn dark x-small color="primary">
+        <v-btn class="ml-1" dark x-small color="primary">
           Reply
         </v-btn>
       </p>
       <p class="logText">
         04:20 - Lasse: Skal du med ud og ryge? 
-        <v-btn dark x-small color="primary">
+        <v-btn class="ml-1" dark x-small color="primary">
           Reply
         </v-btn>
       </p>
