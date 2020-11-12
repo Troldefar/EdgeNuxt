@@ -14,8 +14,19 @@
           Customize
         </v-btn>
       </template>
-      <v-card class="customizeTheme">
-        wow
+      <v-card class="customizeTheme pa-10">
+        <h2 class="font-weight-light text-center mb-2">
+          Customize
+        </h2>
+        <hr>
+        <v-switch
+          v-model="darkMode"
+          label="Dark mode"
+        />
+        <v-switch
+          v-model="notifications"
+          label="Notifications"
+        />
       </v-card>
     </v-dialog>
   </div>
@@ -40,7 +51,7 @@ export default {
 
   .customizeTheme {
     height: 60vh;
-    width: 60vh;
+    width: 60vw;
   }
 }
 </style>

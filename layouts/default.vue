@@ -35,38 +35,8 @@ export default {
 
 <style lang="scss">
 
-/* Globals */
-
-.mr-2 {
-  margin-right: 5px;
-}
-
-.mb-2 {
-  margin-bottom: 5px;
-}
-
-.mt-2 {
-  margin-top: 5px;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.font-weight-light {
-  font-weight: light;
-}
-
-.white-text {
-  color: white;
-}
-
-.pa-5 {
-  padding: 1rem;
-}
-
-.pa-10 {
-  padding: 1rem;
+.v-application p {
+  margin: 0 !important
 }
 
 .greenishBackground {

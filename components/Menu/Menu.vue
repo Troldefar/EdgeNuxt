@@ -1,5 +1,5 @@
 <template>
-  <div class="pa-2 MenuComponent">
+  <div class="pa-5 MenuComponent">
     <v-btn 
       to="/"
       text
@@ -11,13 +11,13 @@
     <span
       color="primary"
       small
-      class="mt-2 mb-2 white-text menuTab"
+      class="mt-2 mb-2 white-text menuTab font-weight-light"
       v-for="(item, index) in menuItems" 
       :key="index" 
       @click="route(item.title)"
       text
     >
-      <v-icon class="mr-2 white-text" style="color:white;">
+      <v-icon class="mr-2 white-text">
         {{ item.icon }}
       </v-icon>
       {{ item.title }}
