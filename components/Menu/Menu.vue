@@ -1,5 +1,5 @@
 <template>
-  <div class="pa-10 MenuComponent">
+  <div class="pa-2 MenuComponent">
     <v-btn 
       to="/"
       text

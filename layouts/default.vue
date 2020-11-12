@@ -1,12 +1,14 @@
 <template>
-  <div class="main">
-    <div class="menu">
-      <Menu />
+  <v-app>
+    <div class="main">
+      <div class="menu">
+        <Menu />
+      </div>
+      <div class="content">
+        <nuxt />
+      </div>
     </div>
-    <div class="content">
-      <nuxt />
-    </div>
-  </div>
+  </v-app>
 </template>
 
 <script>
@@ -37,6 +39,14 @@ export default {
 
 .mr-2 {
   margin-right: 5px;
+}
+
+.mb-2 {
+  margin-bottom: 5px;
+}
+
+.mt-2 {
+  margin-top: 5px;
 }
 
 .text-center {
@@ -71,7 +81,7 @@ export default {
   background: rgb(103, 36, 103);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Roboto:ital,wght@1,300&display=swap');
 
 /* width */
 ::-webkit-scrollbar {
@@ -88,11 +98,15 @@ export default {
 
 html, body {
   height: 100%;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 #__nuxt, #__layout {
   height: 100%;
+}
+
+.logText {
+  font-size: 0.7rem;
 }
 
 .main {
