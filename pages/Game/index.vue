@@ -40,14 +40,6 @@
                 label="Voice chat"
               />
               <v-switch
-                v-model="tryhardCs"
-                label="Tryhard"
-              />
-              <v-switch
-                v-model="multipleCs"
-                label="Multiple games (Possibly)"
-              />
-              <v-switch
                 v-model="wingman"
                 label="Wingman"
               />
@@ -64,14 +56,6 @@
               <v-switch
                 v-model="voiceChatLol"
                 label="Voice chat"
-              />
-              <v-switch
-                v-model="tryhardLol"
-                label="Tryhard"
-              />
-              <v-switch
-                v-model="multipleLol"
-                label="Multiple games (Possibly)"
               />
               <v-switch
                 v-model="aram"
@@ -116,9 +100,34 @@
                 label="Rated battlegrounds"
               />
             </div>
+            <div v-else-if="currentGameSettings === 'Modern Warfare'">
+              <v-switch
+                v-model="voiceChatCOD"
+                label="Voice chat"
+              />
+              <v-switch
+                v-model="brQuad"
+                label="Battle royal quads"
+              />
+              <v-switch
+                v-model="brTrio"
+                label="Battle royal trio"
+              />
+              <v-switch
+                v-model="brDuo"
+                label="Battle royal duo"
+              />
+              <v-switch
+                v-model="plunder"
+                label="Plunder"
+              />
+            </div>
           </v-card>
         </v-dialog>
-        <img width="300" height="200" class="gameImage" :src="item.image" />
+        <img v-if="item.title === 'CS:GO'" width="300" height="200" class="gameImage" src="@/static/images/CounterStrike/csgo.jpg" />
+        <img v-if="item.title === 'League of Legends'" width="300" height="200" class="gameImage" src="@/static/images/LeagueOfLegends/leagueoflegends.png" />
+        <img v-if="item.title === 'World Of Warcraft'" width="300" height="200" class="gameImage" src="@/static/images/WorldOfWarcraft/worldofwarcraft.jpg" />
+        <img v-if="item.title === 'Modern Warfare'" width="300" height="200" class="gameImage" src="@/static/images/ModernWarfare/modernwarfare.jpg" />
       </div>
     </div>
   </div>
@@ -131,19 +140,24 @@ export default {
       games: [
         {
           title: 'CS:GO',
-          image: '/static/images/CounterStrike/csgo.jpg',
+          image: '@/static/images/CounterStrike/csgo.jpg',
           cog: 'mdi-cog-clockwise'
         },
         {
           title: 'League of Legends',
-          image: '/static/images/LeagueOfLegends/leagueoflegends.png',
+          image: '@/static/images/LeagueOfLegends/leagueoflegends.png',
           cog: 'mdi-cog-clockwise'
         },
         {
           title: 'World Of Warcraft',
-          image: '/static/images/WorldOfWarcraft/worldofwarcraft.jpg',
+          image: '@/static/images/WorldOfWarcraft/worldofwarcraft.jpg',
           cog: 'mdi-cog-clockwise'
         },
+        {
+          title: 'Modern Warfare',
+          image: '@/static/images/ModernWarfare/modernwarfare.jpg',
+          cog: 'mdi-cog-clockwise'
+        }
       ],
       currentGameSettings: '',
       dialog: false,
@@ -169,6 +183,12 @@ export default {
       arenaSkirmish: false,
       arenaRanked: false,
       rbg: false,
+      /* Call of duty */
+      voiceChatCOD: false,
+      brQuad: false,
+      brTrio: false,
+      brDuo: false,
+      plunder: false
     }
   },
   methods: {

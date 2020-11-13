@@ -11,7 +11,7 @@
     <p
       color="primary"
       small
-      class="mt-2 mb-2 white-text menuTab"
+      class="mt-4 white-text menuTab"
       v-for="(item, index) in menuItems" 
       :key="index" 
       @click="route(item.title)"
@@ -42,24 +42,8 @@ export default {
           icon: 'mdi-chart-areaspline'
         },
         {
-          title: 'Themes',
-          icon: 'mdi-brush'
-        },
-        {
           title: 'Friends',
           icon: 'mdi-human-male-male'
-        },
-        {
-          title: 'Ranks',
-          icon: 'mdi-clipboard-list-outline'
-        },
-        {
-          title: 'Badges',
-          icon: 'mdi-shield-half-full'
-        },
-        {
-          title: 'Earnings',
-          icon: 'mdi-cash-register'
         },
         {
           title: 'Logs',

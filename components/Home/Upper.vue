@@ -39,6 +39,7 @@
         04:20 - Daniel, Lasse, Martin (Hvem?), Nick
       </p>
     </v-card>
+    <iframe src="https://discord.com/widget?id=776496209245241405&theme=dark" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
   </div>
 </template>
 
