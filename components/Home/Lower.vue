@@ -4,46 +4,19 @@
       <p>
         Team news
       </p>
-      <hr>
-      <p class="logText">
-        10:22 - Josh just joined the team, embrace him!
-      </p>
-      <p class="logText">
-        04:20 - Josh left your group!
-      </p>
-      <p class="logText">
-        00:20 - Martin (Hvem?) just invited Random guy to your group
-      </p>
+      <hr class="mb-5">
     </v-card>
     <v-card class="pa-3 mr-2 blueishBackground">
       <p>
         Recent favorite game news
       </p>
-      <hr>
-      <p class="logText">
-        10:22 - Josh just joined the team, embrace him!
-      </p>
-      <p class="logText">
-        04:20 - Josh left your group!
-      </p>
+      <hr class="mb-5">
     </v-card>
     <v-card class="pa-3 purpleishBackground">
       <p>
         Quickchat
       </p>
-      <hr>
-      <p class="logText mt-2">
-        10:22 - Josh: Wanna game? 
-        <v-btn class="ml-1" dark x-small color="primary">
-          Reply
-        </v-btn>
-      </p>
-      <p class="logText">
-        04:20 - Lasse: Skal du med ud og ryge? 
-        <v-btn class="ml-1" dark x-small color="primary">
-          Reply
-        </v-btn>
-      </p>
+      <hr class="mb-5">
     </v-card>
   </div>
 </template>

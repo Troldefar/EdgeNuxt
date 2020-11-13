@@ -10,12 +10,6 @@
         Logs overview
       </p>
       <hr class="mt-2 mb-2">
-      <p class="logText">
-        10:22 - Team member (Josh) just won a game!
-      </p>
-      <p class="logText">
-        09:56 - Team member (Random dude) just lost a game!
-      </p>
     </v-card>
   </div>
 </template>
