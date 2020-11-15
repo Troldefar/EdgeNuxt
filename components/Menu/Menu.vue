@@ -22,6 +22,17 @@
       </v-icon>
       {{ item.title }}
     </p>
+    <v-btn
+      small
+      prepend-icon="mdi-logout"
+      class="mt-4 white-text menuTab logoutBtn"
+      @click="logout"
+    >
+      <v-icon small class="mr-1">
+        mdi-logout
+      </v-icon>
+      Logout
+    </v-btn>
   </div>
 </template>
 
@@ -66,6 +77,10 @@ export default {
   methods: {
     route (value) {
       this.$router.push(`/${value}`);
+    },
+    logout () {
+      this.$store.state.user.isLoggedIn = false;
+      this.$router.push('/login');
     }
   }
 }
@@ -77,6 +92,15 @@ export default {
   flex-direction: column;
   position: relative;
   user-select: none;
+  position: relative;
+  height: 100%;
+
+  .logoutBtn {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+  }
 
   .menuTab {
     cursor: pointer;
@@ -86,14 +110,6 @@ export default {
 
   .menuTab:hover {
     color: rgb(44, 121, 148);
-  }
-
-  .mt-2 {
-    margin-top: 5%;
-  }
-
-  .mb-2 {
-    margin-bottom: 5%;
   }
 }
 </style>

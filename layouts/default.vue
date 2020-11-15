@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div class="main">
-      <div class="menu">
+      <div v-if="isLoggedIn" class="menu">
         <Menu />
       </div>
       <div class="content">
@@ -17,18 +17,14 @@ import Menu from '@/components/Menu/Menu';
 import User from '@/components/Menu/User';
 
 export default {
-  mounted () {
-    this.$axios.get('/api/')
-      .then(response => {
-        console.log(response);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  },
   components: {
     Menu,
     User
+  },
+  computed: {
+    isLoggedIn () {
+      return this.$store.state.user.isLoggedIn
+    }
   }
 }
 </script>

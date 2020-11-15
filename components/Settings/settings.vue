@@ -5,19 +5,7 @@
         Setup accounts
       </h2>
       <hr class="mr-2 mb-2">
-      <div v-for="(item, index) in settingButtons" :key="index" class="setupContainer mb-10">
-        <span v-if="item.title === 'Discord'">
-          <img src="https://www.flaticon.com/svg/static/icons/svg/2111/2111370.svg" height="50" width="50" />
-        </span>
-        <span v-else-if="item.title === 'Battle.net'">
-          <img src="https://www.flaticon.com/svg/static/icons/svg/528/528114.svg" height="50" width="50" />
-        </span>
-        <span v-else-if="item.title === 'Riot'">
-          <img src="https://www.flaticon.com/svg/static/icons/svg/3750/3750075.svg" height="50" width="50" />
-        </span>
-        <span v-else-if="item.title === 'Steam'">
-          <img src="https://www.flaticon.com/svg/static/icons/svg/3/3782.svg" height="50" width="50" />
-        </span>
+      <div v-for="(item, index) in settingButtons" :key="index" class="setupContainer mb-1">
         <div>
           <v-dialog
             v-model="dialog"
@@ -39,8 +27,12 @@
                 Setup {{ currentSetup }}
               </h2>
               <hr class="mb-4">
-              <v-btn color="primary" small>
+              <v-btn color="primary" class="mb-2" small>
                 Login
+              </v-btn>
+              <br>
+              <v-btn color="primary" small>
+                Manage this account
               </v-btn>
             </v-card>
           </v-dialog>
@@ -58,7 +50,8 @@
       >
         <template v-slot:activator="{ on, attrs }">
           <v-btn 
-            dark 
+            dark
+            small
             v-bind="attrs"
             color="primary"
             v-on="on"

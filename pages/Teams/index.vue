@@ -5,10 +5,10 @@
 </template>
 
 <script>
-import teams from '@/components/Teams/teams'
+import Teams from '@/components/Teams/teams'
 export default {
   components: [
-    teams
+    Teams
   ]
 }
 </script>
