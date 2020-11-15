@@ -18,15 +18,32 @@
         <span v-else-if="item.title === 'Steam'">
           <img src="https://www.flaticon.com/svg/static/icons/svg/3/3782.svg" height="50" width="50" />
         </span>
-        {{ item.title }}
         <div>
-          <v-btn 
-            color="primary" 
-            small
-            @click.prevent="setup(item.title)"
+          <v-dialog
+            v-model="dialog"
+            content-class="customizeTheme"
           >
-            Setup
-          </v-btn>
+            <template v-slot:activator="{ on, attrs }">
+            <v-btn 
+              v-bind="attrs"
+              color="primary"
+              v-on="on"
+              small
+              @click="setup(item.title)"
+            >
+              Setup {{ item.title }}
+            </v-btn>
+            </template>
+            <v-card class="customizeTheme pa-10">
+              <h2 class="font-weight-light text-center mb-2">
+                Setup {{ currentSetup }}
+              </h2>
+              <hr class="mb-4">
+              <v-btn color="primary" small>
+                Login
+              </v-btn>
+            </v-card>
+          </v-dialog>
         </div>
       </div>
     </div>
@@ -36,7 +53,7 @@
       </h2>
       <hr class="mr-2 mb-2">
       <v-dialog
-        v-model="dialog"
+        v-model="setupDialog"
         content-class="customizeTheme"
       >
         <template v-slot:activator="{ on, attrs }">
@@ -106,12 +123,19 @@ export default {
           text: 'Setup discord'
         }
       ],
-      currentSetup: null
+      currentSetup: null,
+      setupDialog: false,
+      dialog: false,
+      darkMode: true,
+      notifications: false,
+      readyToGame: false,
+      visible: false,
+      invitesAllowed: false
     }
   },
   methods: {
     setup (value) {
-      currentSetup = value;
+      this.currentSetup = value
     }
   }
 }
@@ -120,8 +144,6 @@ export default {
 <style lang="scss">
 .setupContainer{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
 }
 </style>

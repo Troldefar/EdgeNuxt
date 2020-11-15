@@ -97,7 +97,7 @@ html, body {
   }
 
   .content {
-    flex: 10;
+    flex: 9;
     position: relative;
   }
 }

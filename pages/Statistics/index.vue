@@ -1,15 +1,15 @@
 <template>
   <div class="pa-10">
-    Statistics
-    <p>
-      
-    </p>
+    <Statistics />
   </div>
 </template>
 
 <script>
+import statistics from '@/components/Statistics/statistics'
 export default {
-
+  components: [
+    statistics
+  ]
 }
 </script>
 
