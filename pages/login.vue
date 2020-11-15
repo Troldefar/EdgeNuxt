@@ -4,8 +4,11 @@
       <h1 class="font-weight-light text-center mb-4">
         Edge
       </h1>
-      <v-text-field type="email" prepend-icon="mdi-face-agent" label="Email" />
-      <v-text-field prepend-icon="mdi-lock-check" type="password" label="Password" />
+      <v-text-field type="email" v-model="email" prepend-icon="mdi-face-agent" label="Email" />
+      <v-text-field prepend-icon="mdi-lock-check" v-model="password" type="password" label="Password" />
+      <v-btn x-small color="blue" to="/register">
+        New around here?
+      </v-btn>
       <v-btn @click="tryLogin" small color="green" class="loginButton mt-4">
         Login
       </v-btn>
@@ -15,12 +18,16 @@
 
 <script>
 export default {
+  data () {
+    return {
+      email: '',
+      password: ''
+    }
+  },
   methods: {
     async tryLogin () {
       try {
-        this.$store.state.user.isLoggedIn = true;
-        this.$router.push('/');
-        //await this.$store.dispatch('user/login');
+        await this.$store.dispatch('user/login', { email: this.email, password: this.password});
       } catch (e) {
         alert(e);
       }

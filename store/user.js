@@ -21,7 +21,21 @@ export const actions = {
           commit('add', response.data);
           resolve(response);
         })
-        .catch(error => reject(error));
+        .catch(error => {
+          reject(error.response.data.message);
+        });
+    })
+  },
+  register ({ commit }, fd) {
+    return new Promise((resolve, reject) => {
+      this.$axios.post('/api/register', fd)
+        .then(response => {
+          commit('add', response.data);
+          resolve(response);
+        })
+        .catch(error => {
+          reject(error.response.data.message);
+        });
     })
   },
   logout ({ commit }, fd) {
