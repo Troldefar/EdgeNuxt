@@ -35,6 +35,8 @@ export default {
           name: this.name, 
           password_confirmation: this.conpw 
         });
+        this.$store.dispatch('user/login', { email: this.email, password: this.password});
+        this.$router.push('/');
       } catch (e) {
         alert(e);
       }
