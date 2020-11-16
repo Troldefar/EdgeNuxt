@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import PushAndPopMessage from '@/static/js/PushAndPopMessage';
 export default {
   data () {
     return {
@@ -33,7 +34,7 @@ export default {
         this.$router.push('/');
         this.loginLoad = false;
       } catch (e) {
-        alert(e);
+        this.$store.$commit('notifications/add', 'Test');
         this.loginLoad = false;
       }
     }

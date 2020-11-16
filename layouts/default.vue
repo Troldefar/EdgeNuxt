@@ -5,6 +5,7 @@
         <Menu />
       </div>
       <div class="content">
+        {{ msg }}
         <nuxt />
       </div>
     </div>
@@ -24,8 +25,14 @@ export default {
   },
   computed: {
     ...mapGetters({
-      loggedIn: 'user/logged'
+      loggedIn: 'user/logged',
+      msg: 'notifications/msg'
     })
+  },
+  beforeCreate() {
+    if(!this.loggedIn) {
+      this.$router.push('/login');
+    }
   }
 }
 </script>
