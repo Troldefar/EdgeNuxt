@@ -9,6 +9,9 @@ export const state = () => ({
   export const mutations = {
     add (state, msg) {
       state.message = msg;
+      setTimeout(() => {
+        $nuxt.$store.commit('notifications/pop');
+      }, 2000);
     },
     pop (state) {
       state.message = '';

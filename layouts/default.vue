@@ -5,7 +5,9 @@
         <Menu />
       </div>
       <div class="content">
-        {{ msg }}
+        <span v-if="msg !== ''" class="notificationDiv pa-2">
+          {{ msg }}
+        </span>
         <nuxt />
       </div>
     </div>
@@ -110,5 +112,14 @@ html, body {
   body {
     display: none;
   }
+}
+
+.notificationDiv {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgb(42, 104, 47);
+  border-radius: 5px;
+  transition: all 0.3s ease-in;
 }
 </style>

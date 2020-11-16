@@ -4,11 +4,41 @@
       <h1 class="font-weight-light text-center mb-4">
         Sign up for free
       </h1>
-      <v-text-field type="email" @keyup="listenForValid" v-model="name" prepend-icon="mdi-tag-faces" label="Name" />
-      <v-text-field type="email" @keyup="listenForValid" v-model="email" prepend-icon="mdi-face-agent" label="Email" />
-      <v-text-field prepend-icon="mdi-lock-check" @keyup="listenForValid" v-model="password" type="password" label="Password" />
-      <v-text-field prepend-icon="mdi-lock-open" @keyup="listenForValid" v-model="conpw" type="password" label="Confirm password" />
-      <v-btn @click="tryRegister" small color="green" :disabled="pwmatchandemail" class="loginButton mt-4">
+      <v-text-field 
+        type="email" 
+        @keyup="listenForValid" 
+        v-model="name" 
+        prepend-icon="mdi-tag-faces" 
+        label="Name" 
+      />
+      <v-text-field 
+        type="email" 
+        @keyup="listenForValid" 
+        v-model="email" 
+        prepend-icon="mdi-face-agent" 
+        label="Email" 
+      />
+      <v-text-field 
+        prepend-icon="mdi-lock-check" 
+        @keyup="listenForValid" 
+        v-model="password" 
+        type="password" 
+        label="Password" 
+      />
+      <v-text-field 
+        prepend-icon="mdi-lock-open" 
+        @keyup="listenForValid" 
+        v-model="conpw" 
+        type="password" 
+        label="Confirm password" 
+      />
+      <v-btn 
+        @click="tryRegister" 
+        small 
+        color="green" 
+        :disabled="pwmatchandemail" 
+        class="loginButton mt-4"
+      >
         Register
       </v-btn>
     </v-form>
@@ -35,8 +65,13 @@ export default {
           name: this.name, 
           password_confirmation: this.conpw 
         });
-        this.$store.dispatch('user/login', { email: this.email, password: this.password});
-        this.$router.push('/');
+        this.$store.dispatch('user/login', { email: this.email, password: this.password})
+          .then(response => {    
+            this.$router.push('/');
+          })
+          .catch(e => {
+            throw new Error(e);
+          })
       } catch (e) {
         alert(e);
       }

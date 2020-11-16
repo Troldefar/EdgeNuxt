@@ -39,6 +39,7 @@
 <script>
 
 import User from '@/components/Menu/User';
+import { mapGetters } from 'vuex';
 
 export default {
   data () {

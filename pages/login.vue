@@ -6,8 +6,8 @@
       </h1>
       <v-text-field type="email" v-model="email" prepend-icon="mdi-face-agent" label="Email" />
       <v-text-field prepend-icon="mdi-lock-check" v-model="password" type="password" label="Password" />
-      <v-btn x-small color="blue" to="/register">
-        New around here?
+      <v-btn x-small class="loginButton" color="blue" to="/register">
+        Register
       </v-btn>
       <v-btn @click="tryLogin" :loading="loginLoad" small color="green" class="loginButton mt-4">
         Login
@@ -34,7 +34,7 @@ export default {
         this.$router.push('/');
         this.loginLoad = false;
       } catch (e) {
-        this.$store.$commit('notifications/add', 'Test');
+        this.$store.commit('notifications/add', e);
         this.loginLoad = false;
       }
     }
@@ -57,6 +57,7 @@ export default {
   .inputContainer {
     background: rgb(49, 67, 107);
     border-radius: 10px;
+    opacity: 0.90;
 
     .loginButton {
       width: 100%;
