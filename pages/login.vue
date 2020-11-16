@@ -30,9 +30,13 @@ export default {
     async tryLogin () {
       this.loginLoad = true;
       try {
-        await this.$store.dispatch('user/login', { email: this.email, password: this.password});
-        this.$router.push('/');
-        this.loginLoad = false;
+        await this.$store.dispatch('user/login', { email: this.email, password: this.password})
+          .then(response => {
+            this.$router.push('/');
+            this.loginLoad = false;
+            this.$store.commit('notifications/add', 'Welcome ' + response.data.name);
+          })
+          .catch(error => {});
       } catch (e) {
         this.$store.commit('notifications/add', e);
         this.loginLoad = false;

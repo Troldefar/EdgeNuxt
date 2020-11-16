@@ -121,5 +121,6 @@ html, body {
   background: rgb(42, 104, 47);
   border-radius: 5px;
   transition: all 0.3s ease-in;
+  z-index: 1000;
 }
 </style>

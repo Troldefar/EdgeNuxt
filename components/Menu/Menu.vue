@@ -1,5 +1,5 @@
 <template>
-  <div class="pa-5 MenuComponent">
+  <div class="MenuComponent">
     <v-btn 
       to="/"
       text
@@ -8,10 +8,10 @@
       Edge
     </v-btn>
     <User />
-    <p
+    <span
       color="primary"
       small
-      class="mt-4 white-text menuTab"
+      class="pa-3 white-text menuTab"
       v-for="(item, index) in menuItems" 
       :key="index" 
       @click="route(item.title)"
@@ -21,7 +21,7 @@
         {{ item.icon }}
       </v-icon>
       {{ item.title }}
-    </p>
+    </span>
     <v-btn
       small
       prepend-icon="mdi-logout"
@@ -39,7 +39,6 @@
 <script>
 
 import User from '@/components/Menu/User';
-import { mapGetters } from 'vuex';
 
 export default {
   data () {
@@ -79,8 +78,13 @@ export default {
     route (value) {
       this.$router.push(`/${value}`);
     },
-    logout () {
-      this.$router.push('/login');
+    async logout () {
+      try {
+        await this.$store.dispatch('user/logout');  
+        this.$router.push('/login');
+      } catch (e) {
+        this.$store.commit('notifications/add', e);
+      }
     }
   }
 }
@@ -106,6 +110,9 @@ export default {
     cursor: pointer;
     font-size: 0.7rem;
     transition: all 0.3s ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .menuTab:hover {

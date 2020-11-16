@@ -1,20 +1,25 @@
 export const state = () => ({
   user: null,
-  isLoggedIn: false 
+  isLoggedIn: false
 });
 
 export const mutations = {
-  login (state, user) {
-    state.user = user;
+  login (state, loggedUser) {
+    state.user = loggedUser;
+    localStorage.setItem('api_token', loggedUser.api_token);
     state.isLoggedIn = true;
+  },
+  false (state) {
+    state.isLoggedIn = false;
   },
   logout (state) {
     state.user = null;
-    state.isLoggedIn = false;
+    $nuxt.$store.commit('user/false');
   }
 }
 
 export const getters = {
+  user: state => state.user,
   logged: state => state.isLoggedIn
 }
 
@@ -26,8 +31,8 @@ export const actions = {
           commit('login', response.data);
           resolve(response);
         })
-        .catch(error => {
-          reject(error.response.data.message);
+        .catch(err => {
+          reject(err.response.data.message);
         });
     })
   },
