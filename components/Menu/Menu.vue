@@ -79,7 +79,6 @@ export default {
       this.$router.push(`/${value}`);
     },
     logout () {
-      this.$store.state.user.isLoggedIn = false;
       this.$router.push('/login');
     }
   }

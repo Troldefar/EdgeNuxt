@@ -9,7 +9,7 @@
       <v-btn x-small color="blue" to="/register">
         New around here?
       </v-btn>
-      <v-btn @click="tryLogin" small color="green" class="loginButton mt-4">
+      <v-btn @click="tryLogin" :loading="loginLoad" small color="green" class="loginButton mt-4">
         Login
       </v-btn>
     </v-form>
@@ -21,15 +21,20 @@ export default {
   data () {
     return {
       email: '',
-      password: ''
+      password: '',
+      loginLoad: false
     }
   },
   methods: {
     async tryLogin () {
+      this.loginLoad = true;
       try {
         await this.$store.dispatch('user/login', { email: this.email, password: this.password});
+        this.$router.push('/');
+        this.loginLoad = false;
       } catch (e) {
         alert(e);
+        this.loginLoad = false;
       }
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <div class="main">
-      <div v-if="isLoggedIn" class="menu">
+      <div v-if="loggedIn" class="menu">
         <Menu />
       </div>
       <div class="content">
@@ -15,6 +15,7 @@
 
 import Menu from '@/components/Menu/Menu';
 import User from '@/components/Menu/User';
+import { mapGetters } from 'vuex';
 
 export default {
   components: {
@@ -22,9 +23,9 @@ export default {
     User
   },
   computed: {
-    isLoggedIn () {
-      return this.$store.state.user.isLoggedIn
-    }
+    ...mapGetters({
+      loggedIn: 'user/logged'
+    })
   }
 }
 </script>

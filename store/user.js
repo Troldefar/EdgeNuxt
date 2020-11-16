@@ -9,8 +9,13 @@ export const mutations = {
     state.isLoggedIn = true;
   },
   logout (state) {
-    state.user = [];
+    state.user = null;
+    state.isLoggedIn = false;
   }
+}
+
+export const getters = {
+  logged: state => state.isLoggedIn
 }
 
 export const actions = {
@@ -18,7 +23,7 @@ export const actions = {
     return new Promise((resolve, reject) => {
       this.$axios.post('/api/login', fd)
         .then(response => {
-          commit('add', response.data);
+          commit('login', response.data);
           resolve(response);
         })
         .catch(error => {
@@ -30,7 +35,7 @@ export const actions = {
     return new Promise((resolve, reject) => {
       this.$axios.post('/api/register', fd)
         .then(response => {
-          commit('add', response.data);
+          commit('login', response.data);
           resolve(response);
         })
         .catch(error => {
@@ -43,7 +48,7 @@ export const actions = {
       this.$axios.post('/api/logout', fd)
         .then(response => {
           resolve(response);
-          commit(logout, fd);
+          commit('logout');
         })
         .catch(error => reject(error));
     })
