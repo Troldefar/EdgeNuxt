@@ -122,5 +122,7 @@ html, body {
   border-radius: 5px;
   transition: all 0.3s ease-in;
   z-index: 1000;
+  width: 30%;
+  text-align: center;
 }
 </style>

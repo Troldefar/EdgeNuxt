@@ -125,7 +125,6 @@ export default {
 
   .menuTab:hover {
     color: black;
-    font-size: 0.9rem;
     background: rgb(204, 196, 196);
   }
 }

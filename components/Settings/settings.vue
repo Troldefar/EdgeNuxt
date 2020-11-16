@@ -28,7 +28,7 @@
               </h2>
               <hr class="mb-4">
               <v-btn color="primary" class="mb-2" small>
-                Login
+                Link account
               </v-btn>
               <br>
               <v-btn color="primary" small>
