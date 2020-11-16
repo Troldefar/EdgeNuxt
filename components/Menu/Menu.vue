@@ -4,6 +4,7 @@
       to="/"
       text
       dark
+      class="mt-3"
     >
       Edge
     </v-btn>
@@ -11,13 +12,14 @@
     <span
       color="primary"
       small
+      :class="item.title === 'Game' ? 'gameButton' : ''"
       class="pa-3 white-text menuTab"
       v-for="(item, index) in menuItems" 
       :key="index" 
       @click="route(item.title)"
       text
     >
-      <v-icon class="mr-2 white-text">
+      <v-icon large class="white-text">
         {{ item.icon }}
       </v-icon>
       {{ item.title }}
@@ -25,7 +27,7 @@
     <v-btn
       small
       prepend-icon="mdi-logout"
-      class="mt-4 white-text menuTab logoutBtn"
+      class="mt-4 white-text logoutBtn"
       @click="logout"
     >
       <v-icon small class="mr-1">
@@ -108,15 +110,23 @@ export default {
 
   .menuTab {
     cursor: pointer;
-    font-size: 0.7rem;
+    font-size: 0.7rem; 
     transition: all 0.3s ease-in;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    border-bottom: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gameButton {
+    border-top: 1px solid white;
   }
 
   .menuTab:hover {
-    color: rgb(44, 121, 148);
+    color: black;
+    font-size: 0.9rem;
+    background: rgb(204, 196, 196);
   }
 }
 </style>

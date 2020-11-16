@@ -1,13 +1,12 @@
 <template>
   <div dark class="UserInformation mt-5 mb-5">
-    <span text to="/profile" x-small class="menuTab userInfoName">
+    <p text to="/profile" x-small class="userInfoName font-weight-light">
       {{ user.name }}
-    </span>
-    <div class="menuTab">
-      Status: 
-      <span class="green--text">
+    </p>
+    <div>
+      <p class="green--text font-weight-light">
         Online
-      </span>
+      </p>
     </div>
   </div>
 </template>
@@ -26,6 +25,7 @@ export default {
 <style>
 .UserInformation {
   color: white;
+  text-align: center;
 }
 
 .userInfoName {
