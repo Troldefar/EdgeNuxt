@@ -1,5 +1,5 @@
 <template>
-  <div class="pa-10">
+  <div>
     <Logs />
   </div>
 </template>

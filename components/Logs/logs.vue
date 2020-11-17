@@ -1,16 +1,22 @@
 <template>
-  <div class="logsContainer">
+  <div class="logsContainer pa-10">
     <h2 class="font-weight-light">
       User activity
     </h2>
     <hr class="mb-4">
-    <v-card class="mb-2 pa-5" v-for="(item, index) in logs" :key="index">
-      {{ item.text }}
-      <br>
-      <span v-if="item.created_at">
-        {{ new Date(item.created_at).toLocaleString() }}
-      </span>
-    </v-card>
+    <div class="inner">
+      <v-card class="mb-2 pa-5" v-for="(item, index) in logs" :key="index">
+        {{ item.text }}
+        <br>
+        <span v-if="item.created_at">
+          {{ new Date(item.created_at).toLocaleString() }}
+        </span>
+      </v-card>
+    </div>
+    <h2 class="font-weight-light mt-4">
+      Game activity
+    </h2>
+    <hr class="mb-4">
   </div>
 </template>
 
@@ -29,9 +35,12 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .logsContainer {
-  height: 88vh;
-  overflow-y: auto;
+  height: 100% !important;
+  .inner {
+    overflow-y: auto;
+    height: 50vh;
+  }
 }
 </style>
