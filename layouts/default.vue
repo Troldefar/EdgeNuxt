@@ -115,7 +115,8 @@ html, body {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: rgb(42, 104, 47);
+  font-size: 0.8rem;
+  background: rgb(44, 95, 48);
   border-radius: 5px;
   transition: all 0.3s ease-in;
   z-index: 1000;
