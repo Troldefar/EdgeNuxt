@@ -5,10 +5,15 @@ export const state = () => ({
 export const mutations = {
   add (state, list) {
     state.logs = list;
+    console.log(state.logs);
   },
   pop (state, list) {
     state.logs = [];
   }
+}
+
+export const getters = {
+  logs: state => state.logs
 }
 
 export const actions = {
@@ -16,7 +21,6 @@ export const actions = {
     return new Promise((resolve, reject) => {
       this.$axios.get('/api/logs')
         .then(response => {
-          console.log(response);
           commit('add', response.data);
         })
         .catch(error => reject(error));

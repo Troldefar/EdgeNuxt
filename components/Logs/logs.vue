@@ -1,40 +1,36 @@
 <template>
-  <div>
+  <div class="logsContainer">
     <h2 class="font-weight-light">
-      Logs
+      User activity
     </h2>
     <hr class="mb-4">
-    <div>
-      <p>Here you can see a detailed view of what happended throughout your account.</p>
-    </div>
-    <v-btn @click="getLogs" class="mt-2" small color="green">
-      Refresh
-    </v-btn>
+    <v-card class="mb-2 pa-3" v-for="(item, index) in logs" :key="index">
+      {{ item.text }}
+      <br>
+      <span v-if="item.created_at">
+        {{ new Date(item.created_at).toLocaleString() }}
+      </span>
+    </v-card>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 export default {
-  methods: {
-    getLogs () {
-      this.$store.dispatch('logs/test');
-    }
-  },
   computed: {
-    logs () {
-      return this.$store.state.logs
-    },
     ...mapGetters({
-      logs: 'logs/all'
+      logs: 'logs/logs'
     })
   },
-  mounted () {
-    this.$store.dispatch('logs/all')
-  }
+  async fetch () {
+    await this.$store.dispatch('logs/all');
+  },
 }
 </script>
 
 <style>
-
+.logsContainer {
+  height: 90vh;
+  overflow-y: auto;
+}
 </style>
