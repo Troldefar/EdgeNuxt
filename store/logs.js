@@ -12,10 +12,11 @@ export const mutations = {
 }
 
 export const actions = {
-  addLogs ({ commit }) {
+  all ({ commit }) {
     return new Promise((resolve, reject) => {
       this.$axios.get('/api/logs')
         .then(response => {
+          console.log(response);
           commit('add', response.data);
         })
         .catch(error => reject(error));

@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
   methods: {
     getLogs () {
@@ -23,7 +24,13 @@ export default {
   computed: {
     logs () {
       return this.$store.state.logs
-    }
+    },
+    ...mapGetters({
+      logs: 'logs/all'
+    })
+  },
+  mounted () {
+    this.$store.dispatch('logs/all')
   }
 }
 </script>

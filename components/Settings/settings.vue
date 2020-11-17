@@ -27,7 +27,7 @@
                 Setup {{ currentSetup }}
               </h2>
               <hr class="mb-4">
-              <v-btn color="primary" class="mb-2" small>
+              <v-btn color="primary" class="mb-2" small @click="setupButton(item.title)">
                 Link account
               </v-btn>
               <br>
@@ -129,6 +129,9 @@ export default {
   methods: {
     setup (value) {
       this.currentSetup = value
+    },
+    setupButton (value) {
+
     }
   }
 }
