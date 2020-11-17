@@ -124,10 +124,10 @@
             </div>
           </v-card>
         </v-dialog>
-        <img v-if="item.title === 'CS:GO'" width="300" height="200" class="gameImage" src="@/static/images/CounterStrike/csgo.jpg" />
-        <img v-if="item.title === 'League of Legends'" width="300" height="200" class="gameImage" src="@/static/images/LeagueOfLegends/leagueoflegends.png" />
-        <img v-if="item.title === 'World Of Warcraft'" width="300" height="200" class="gameImage" src="@/static/images/WorldOfWarcraft/worldofwarcraft.jpg" />
-        <img v-if="item.title === 'Modern Warfare'" width="300" height="200" class="gameImage" src="@/static/images/ModernWarfare/modernwarfare.jpg" />
+        <img v-if="item.title === 'CS:GO'" width="250" height="150" class="gameImage" src="@/static/images/CounterStrike/csgo.jpg" />
+        <img v-if="item.title === 'League of Legends'" width="250" height="150" class="gameImage" src="@/static/images/LeagueOfLegends/leagueoflegends.png" />
+        <img v-if="item.title === 'World Of Warcraft'" width="250" height="150" class="gameImage" src="@/static/images/WorldOfWarcraft/worldofwarcraft.jpg" />
+        <img v-if="item.title === 'Modern Warfare'" width="250" height="150" class="gameImage" src="@/static/images/ModernWarfare/modernwarfare.jpg" />
       </div>
     </div>
   </div>
@@ -198,7 +198,7 @@ export default {
     },
     findMembers (value) {
       const el = document.querySelector('#gameSelectedAndCanSearch');
-      el.innerHTML = 'Looking for team members: ' + value;
+      this.$store.commit('notifications/add', 'Looking for team members: ' + value);
     }
   }
 }

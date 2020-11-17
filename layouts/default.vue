@@ -91,8 +91,6 @@ html, body {
 
   .menu {
     flex: 1;
-    height: 100%;
-    position: relative;
     background: rgb(35, 34, 34);
 
     .CurrentUser {
@@ -103,8 +101,7 @@ html, body {
   }
 
   .content {
-    flex: 9;
-    position: relative;
+    flex: 10;
   }
 }
 

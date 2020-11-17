@@ -1,13 +1,11 @@
 <template>
   <div dark class="UserInformation mt-5 mb-5">
-    <p text to="/profile" x-small class="userInfoName font-weight-light">
+    <p text x-small class="userInfoName font-weight-light" @click="openUser">
       {{ user.name }}
+      <v-icon x-small color="green" class="mb-1">
+        mdi-checkbox-blank-circle
+      </v-icon>
     </p>
-    <div>
-      <p class="green--text font-weight-light">
-        Online
-      </p>
-    </div>
   </div>
 </template>
 
@@ -18,6 +16,11 @@ export default {
     ...mapGetters({
       user: 'user/user'
     })
+  },
+  methods: {
+    openUser() {
+      this.$router.push(`/profile`);
+    }
   }
 }
 </script>
@@ -29,6 +32,7 @@ export default {
 }
 
 .userInfoName {
+  cursor: pointer;
   text-transform: capitalize;
 }
 </style>

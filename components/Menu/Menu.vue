@@ -4,7 +4,6 @@
       to="/"
       text
       dark
-      class="mt-3"
     >
       Edge
     </v-btn>
@@ -19,21 +18,23 @@
       @click="route(item.title)"
       text
     >
-      <v-icon large class="white-text">
+      <v-icon small class="white-text">
         {{ item.icon }}
       </v-icon>
-      {{ item.title }}
+      <p>
+        {{ item.title }}
+      </p>
     </span>
     <v-btn
       small
       prepend-icon="mdi-logout"
-      class="mt-4 white-text logoutBtn"
+      class="white-text logoutBtn"
+      text
       @click="logout"
     >
-      <v-icon small class="mr-1">
+      <v-icon>
         mdi-logout
       </v-icon>
-      Logout
     </v-btn>
   </div>
 </template>
@@ -60,7 +61,7 @@ export default {
         },
         {
           title: 'Logs',
-          icon: 'mdi-format-list-numbered'
+          icon: 'mdi-data-matrix-edit'
         },
         {
           title: 'Settings',
@@ -100,6 +101,10 @@ export default {
   user-select: none;
   position: relative;
   height: 100%;
+  background: url('https://w.wallhaven.cc/full/5w/wallhaven-5wwjj1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   .logoutBtn {
     position: absolute;

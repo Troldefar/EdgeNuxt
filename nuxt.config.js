@@ -13,7 +13,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
+      { rel: 'icon', type: 'image/png', href: 'https://cdn3.iconfinder.com/data/icons/letters-and-numbers-1/32/letter_E_blue-512.png' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

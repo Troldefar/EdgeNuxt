@@ -5,7 +5,7 @@
     </h2>
     <hr class="mb-4">
     <div>
-      <p>Here you can see a detailed view your friends and their progress.</p>
+      
     </div>
   </div>
 </template>

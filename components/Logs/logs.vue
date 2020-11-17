@@ -4,7 +4,7 @@
       User activity
     </h2>
     <hr class="mb-4">
-    <v-card class="mb-2 pa-3" v-for="(item, index) in logs" :key="index">
+    <v-card class="mb-2 pa-5" v-for="(item, index) in logs" :key="index">
       {{ item.text }}
       <br>
       <span v-if="item.created_at">
@@ -24,13 +24,14 @@ export default {
   },
   async fetch () {
     await this.$store.dispatch('logs/all');
+    this.$store.commit('notifications/add', 'Logs was fetched from server');
   },
 }
 </script>
 
 <style>
 .logsContainer {
-  height: 90vh;
+  height: 88vh;
   overflow-y: auto;
 }
 </style>

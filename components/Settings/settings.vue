@@ -17,6 +17,7 @@
               color="primary"
               v-on="on"
               small
+              class="setupBtn"
               @click="setup(item.title)"
             >
               Setup {{ item.title }}
@@ -55,6 +56,7 @@
             v-bind="attrs"
             color="primary"
             v-on="on"
+            class="setupBtn"
           >
             Customize
           </v-btn>
@@ -83,6 +85,50 @@
           <v-switch
             v-model="invitesAllowed"
             label="Invites allowed"
+          />
+        </v-card>
+      </v-dialog>
+      <br>
+      <v-dialog
+        v-model="yourPageDialog"
+        content-class="customizeTheme"
+      >
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn 
+            dark
+            small
+            v-bind="attrs"
+            color="primary"
+            v-on="on"
+            class="setupBtn mt-1"
+          >
+            Personalize
+          </v-btn>
+        </template>
+        <v-card class="customizeTheme pa-10">
+          <h2 class="font-weight-light text-center mb-2">
+            Personalize
+          </h2>
+          <hr class="mb-3">
+          <p>
+            Change Menu Image
+          </p>
+          <v-file-input
+            outlined
+            dense
+            class="mb-3 mt-3"
+            label="Menu background"
+            @change="menuImage"
+          />
+          <p>
+            Change Background Image
+          </p>
+          <v-file-input
+            outlined
+            dense
+            class="mb-3 mt-3"
+            label="Background image"
+            @change="backgroundImage"
           />
         </v-card>
       </v-dialog>
@@ -123,7 +169,8 @@ export default {
       notifications: false,
       readyToGame: false,
       visible: false,
-      invitesAllowed: false
+      invitesAllowed: false,
+      yourPageDialog: false
     }
   },
   methods: {
@@ -132,6 +179,24 @@ export default {
     },
     setupButton (value) {
 
+    },
+    menuImage (value) {
+      if(value) {
+        try {
+          this.$store.commit('notifications/add', 'Menu image changed');
+        } catch (e) {
+
+        }
+      }
+    },
+    backgroundImage (value) {
+      if(value) {
+        try {
+          this.$store.commit('notifications/add', 'Menu image changed');
+        } catch (e) {
+
+        }
+      }
     }
   }
 }
@@ -141,5 +206,9 @@ export default {
 .setupContainer{
   display: flex;
   flex-direction: column;
+}
+
+.setupBtn {
+  width: 15%;
 }
 </style>
