@@ -40,7 +40,7 @@ export default {
   height: 100% !important;
   .inner {
     overflow-y: auto;
-    height: 50vh;
+    height: 30vh;
   }
 }
 </style>

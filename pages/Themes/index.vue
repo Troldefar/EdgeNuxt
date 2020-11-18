@@ -69,7 +69,6 @@ export default {
   .customizeTheme {
     height: 60vh;
     width: 60vw;
-    background: red;
   }
 }
 </style>
