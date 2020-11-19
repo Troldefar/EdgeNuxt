@@ -30,8 +30,10 @@ export default {
   },
   async fetch () {
     await this.$store.dispatch('logs/all');
-    this.$store.commit('notifications/add', 'Logs was fetched from server');
   },
+  async mounted () {
+    await this.$store.commit('notifications/add', 'Logs was fetched from server');
+  }
 }
 </script>
 
@@ -39,8 +41,8 @@ export default {
 .logsContainer {
   height: 100% !important;
   .inner {
+    height: 35vh;
     overflow-y: auto;
-    height: 30vh;
   }
 }
 </style>

@@ -101,7 +101,7 @@ export default {
   user-select: none;
   position: relative;
   height: 100%;
-  background: url('https://w.wallhaven.cc/full/j5/wallhaven-j5oe3y.jpg');
+  background: url('https://w.wallhaven.cc/full/v9/wallhaven-v9xjjl.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

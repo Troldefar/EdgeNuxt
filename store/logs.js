@@ -5,7 +5,6 @@ export const state = () => ({
 export const mutations = {
   add (state, list) {
     state.logs = list;
-    console.log(state.logs);
   },
   pop (state, list) {
     state.logs = [];
