@@ -194,7 +194,6 @@ export default {
   methods: {
     searchGame (value) {
       this.currentGameSettings = value;
-      console.log(this.currentGameSettings);
     },
     findMembers (value) {
       const el = document.querySelector('#gameSelectedAndCanSearch');

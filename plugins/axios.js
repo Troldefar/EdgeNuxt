@@ -7,6 +7,6 @@ export default function ({ $axios, app }) {
   });
 
   $axios.onError(err => {
-    console.log(err);
+    
   });
 }
