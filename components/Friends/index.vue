@@ -3,6 +3,9 @@
     <h2 class="font-weight-light">
       Friends
     </h2>
+    <v-btn x-small class="mb-2" color="primary">
+      Friend requests (0)
+    </v-btn>
     <hr class="mb-4">
     <div>
       <v-text-field 
@@ -21,8 +24,11 @@
         <hr class="mt-2">
         {{ item.email }} 
         <br>
-        <v-btn color="green" small class="mt-2" dark @click="befriend(item)">
+        <v-btn v-if="!checkIfFriends(item.id)" color="green" small class="mt-2" dark @click="befriend(item)">
           Befriend
+        </v-btn>
+        <v-btn v-else color="green" disabled small class="mt-2" dark @click="befriend(item)">
+          Already friends
         </v-btn>
       </v-card>
     </div>
@@ -41,14 +47,23 @@ export default {
     }
   },
   methods: {
-    befriend (value) {
+    async befriend (value) {
+      try {
+        await this.$store.dispatch('users/invite', { user_id: this.user.id, friend_id: value.id })
+        this.$store.commit('notifications/add', 'Friend request sended');
+      } catch (e) {
+        this.$store.commit('notifications/add', e);
+      }
+    },
+    checkIfFriends (value) {
       console.log(value);
-      this.$store.commit('notifications/add', value.name + ' was invited to be friends');
     }
   },
   computed: {
     ...mapGetters({
-      users: 'users/all'
+      users: 'users/all',
+      user: 'user/user',
+      invites: 'users/invites'
     })
   },
   watch: {
@@ -56,6 +71,9 @@ export default {
       this.$fetch();
     },
     deep: true
+  },
+  async created () {
+    await this.$store.dispatch('users/checkFriendRequests', this.user.id);
   }
 }
 </script>
