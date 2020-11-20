@@ -1,9 +1,11 @@
 export const state = () => ({
-    message: ''
+    message: '',
+    notifications: []
   });
 
   export const getters = {
-    msg: state => state.message
+    msg: state => state.message,
+    all: state => state.notifications
   }
   
   export const mutations = {

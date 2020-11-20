@@ -7,4 +7,5 @@ import statistics from '@/store/statistics';
 import themes from '@/store/themes';
 import user from '@/store/user';
 import users from '@/store/users';
+import game from '@/store/game';
 

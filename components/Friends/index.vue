@@ -18,14 +18,21 @@
       />
     </div>
     <div class="usersFound">
-      Users found:
-      <v-card class="pa-5 mb-2" v-for="(item, index) in users" :key="index">
+      <v-card 
+        class="pa-5 mb-2" 
+        v-for="(item, index) in users" 
+        :key="index" 
+        v-if="item.id !== user.id"
+      >
+        <v-icon small>
+          mdi-face
+        </v-icon>
         {{ item.name }} 
         <hr class="mt-2">
         {{ item.email }} 
         <br>
         <v-btn v-if="!checkIfFriends(item.id)" color="green" small class="mt-2" dark @click="befriend(item)">
-          Befriend
+          Add friend
         </v-btn>
         <v-btn v-else color="green" disabled small class="mt-2" dark @click="befriend(item)">
           Already friends
@@ -52,7 +59,7 @@ export default {
         await this.$store.dispatch('users/invite', { user_id: this.user.id, friend_id: value.id })
         this.$store.commit('notifications/add', 'Friend request sended');
       } catch (e) {
-        this.$store.commit('notifications/add', e);
+        this.$store.commit('notifications/add', e.response.data);
       }
     },
     checkIfFriends (value) {
@@ -73,14 +80,14 @@ export default {
     deep: true
   },
   async created () {
-    await this.$store.dispatch('users/checkFriendRequests', this.user.id);
+    await this.$store.dispatch('users/checkFriendRequests');
   }
 }
 </script>
 
 <style>
 .usersFound {
-  height: 70vh;
+  height: 50vh;
   overflow-y: auto;
 }
 </style>

@@ -52,7 +52,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 99.8%;
   background: url('https://w.wallhaven.cc/full/rd/wallhaven-rd3pjw.jpg');
   background-position: center;
   background-size: cover;

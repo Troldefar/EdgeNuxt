@@ -31,19 +31,16 @@ export default {
     ...mapGetters({
       user: 'user/user'
     })
-  },
-  mounted () {
-    this.$store.commit('notifications/add', 'User fetched');
   }
 }
 </script>
 
 <style lang="scss">
 .profileContainer {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 9%;
 
   .saveButton {
     width: 100%;

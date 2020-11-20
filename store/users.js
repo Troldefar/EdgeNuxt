@@ -32,17 +32,15 @@ export const actions = {
     return new Promise((resolve, reject) => {
       this.$axios.post('/api/invite', { friend_id: invite.friend_id, user_id: invite.user_id})
         .then(response => {
-          console.log(response);
           resolve(response);
         })
         .catch((err) => reject(err));
     })
   },
-  checkFriendRequests ({ commit }, id) {
+  checkFriendRequests ({ commit }) {
     return new Promise((resolve, reject) => {
-      this.$axios.get(`/api/invites/${id}`)
+      this.$axios.get(`/api/invites`)
         .then(response => {
-          console.log(response);
           commit('SET_INVITES', response.data);
           resolve(response);
         })

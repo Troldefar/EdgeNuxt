@@ -1,10 +1,10 @@
 <template>
-  <div class="pa-10 gameContainer" id="gameSelectedAndCanSearch">
+  <div class="gameContainer pa-10" id="gameSelectedAndCanSearch">
     <h2 class="font-weight-light text-start">
       Select your game
     </h2>
     <hr>
-    <div class="outerSelectGame">
+    <div class="outerSelectGame mt-10">
       <div v-for="(item, index) in games" :key="index" class="gameSelector mr-3" @click="findMembers(item.title)">
         <p class="gameText font-weight-light">
           {{ item.title }}
@@ -210,10 +210,8 @@ export default {
 }
 
 .gameContainer {
-  height:100%;
   .outerSelectGame {
     display: flex;
-    height: 100%;
     justify-content: center;
     align-items: center;
     .gameSelector {

@@ -1,16 +1,6 @@
 <template>
   <div class="middleHome" style="margin: 30px 0px;">
-    <v-card class="pa-5 mr-2 earth">
-      <p>
-        Quick overview
-      </p>
-    </v-card>
-    <v-card class="pa-5">
-      <p>
-        Logs overview
-      </p>
-      <hr class="mt-2 mb-2">
-    </v-card>
+    
   </div>
 </template>
 

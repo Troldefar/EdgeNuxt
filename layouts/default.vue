@@ -5,6 +5,7 @@
         <Menu />
       </div>
       <div class="content">
+        <UpperMenu style="margin-left:2px;" />
         <span v-if="msg !== ''" class="notificationDiv pa-2">
           {{ msg }}
         </span>
@@ -18,6 +19,7 @@
 
 import Menu from '@/components/Menu/Menu';
 import User from '@/components/Menu/User';
+import UpperMenu from '@/components/Menu/UpperMenu';
 import { mapGetters } from 'vuex';
 
 export default {
@@ -75,11 +77,9 @@ export default {
 html, body {
   height: 100%;
   font-family: 'Roboto', sans-serif;
+  background: white !important;
 }
 
-#__nuxt, #__layout {
-  height: 100%;
-}
 
 .logText {
   font-size: 0.7rem;
@@ -88,20 +88,32 @@ html, body {
 .main {
   height: 100%;
   display: flex;
-
+  background: #2E4397;
+  background: -webkit-linear-gradient(top left, #2E4397, #3675FF);
+  background: -moz-linear-gradient(top left, #2E4397, #3675FF);
+  background: linear-gradient(to bottom right, #2E4397, #3675FF);
   .menu {
     flex: 1;
-    background: rgb(35, 34, 34);
-
+    background-color: #111c33;
+    box-shadow: 0px 0px 0px 2px black;
     .CurrentUser {
       position: absolute;
       bottom: 10px;
       width: 100%;
     }
   }
-
   .content {
     flex: 10;
+    .userMenu {
+      background-color: #14213d;
+      position: relative;
+      box-shadow: 0px 0px 0px 2px black;
+      .userBellContainer {
+        position: absolute;
+        right: 25px;
+        top: 35%;
+      }
+    }
   }
 }
 

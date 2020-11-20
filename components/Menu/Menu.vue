@@ -1,13 +1,11 @@
 <template>
   <div class="MenuComponent">
-    <v-btn 
-      to="/"
-      text
-      dark
-    >
-      Edge
-    </v-btn>
-    <User />
+    <span class="pa-3">
+      <v-icon small>
+        mdi-graph-outline
+      </v-icon>
+      Dashboard
+    </span>
     <span
       color="primary"
       small
@@ -18,21 +16,19 @@
       @click="route(item.title)"
       text
     >
-      <v-icon small class="white-text">
+      <v-icon small class="white-text mr-1">
         {{ item.icon }}
       </v-icon>
-      <p>
-        {{ item.title }}
-      </p>
+      {{ item.title }}
     </span>
     <v-btn
       small
       prepend-icon="mdi-logout"
-      class="white-text logoutBtn"
+      class="white-text logoutBtn pa-2"
       text
       @click="logout"
     >
-      <v-icon>
+      <v-icon small>
         mdi-logout
       </v-icon>
     </v-btn>
@@ -100,11 +96,7 @@ export default {
   position: relative;
   user-select: none;
   position: relative;
-  height: 100%;
-  background: url('https://w.wallhaven.cc/full/v9/wallhaven-v9xjjl.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 99.8%;
 
   .logoutBtn {
     position: absolute;
@@ -114,23 +106,8 @@ export default {
   }
 
   .menuTab {
+    font-size: 0.8rem;
     cursor: pointer;
-    font-size: 0.7rem; 
-    transition: all 0.3s ease-in;
-    display: flex;
-    border-bottom: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .gameButton {
-    border-top: 1px solid white;
-  }
-
-  .menuTab:hover {
-    color: black;
-    background: rgb(204, 196, 196);
   }
 }
 </style>
