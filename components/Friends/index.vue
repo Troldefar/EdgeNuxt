@@ -21,7 +21,7 @@
         <hr class="mt-2">
         {{ item.email }} 
         <br>
-        <v-btn color="green" small class="mt-2" dark @click="befriend(item.id)">
+        <v-btn color="green" small class="mt-2" dark @click="befriend(item)">
           Befriend
         </v-btn>
       </v-card>
@@ -43,6 +43,7 @@ export default {
   methods: {
     befriend (value) {
       console.log(value);
+      this.$store.commit('notifications/add', value.name + ' was invited to be friends');
     }
   },
   computed: {
