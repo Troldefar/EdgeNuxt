@@ -56,7 +56,7 @@ export default {
   methods: {
     async befriend (value) {
       try {
-        await this.$store.dispatch('users/invite', { user_id: this.user.id, friend_id: value.id })
+        await this.$store.dispatch('users/invite', { user_id: this.user.id, friend_id: value.id });
         this.$store.commit('notifications/add', 'Friend request sended');
       } catch (e) {
         this.$store.commit('notifications/add', e.response.data);
