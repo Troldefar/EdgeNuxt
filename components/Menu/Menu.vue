@@ -1,22 +1,19 @@
 <template>
   <div class="MenuComponent">
-    <span class="pa-3">
-      <v-icon small>
-        mdi-graph-outline
-      </v-icon>
+    <span class="text-center mt-2" style="height:20vh;">
       Dashboard
     </span>
     <span
       color="primary"
       small
       :class="item.title === 'Game' ? 'gameButton' : ''"
-      class="pa-3 white-text menuTab"
+      class="mb-5 ml-4 white-text menuTab"
       v-for="(item, index) in menuItems" 
       :key="index" 
       @click="route(item.title)"
       text
     >
-      <v-icon small class="white-text mr-1">
+      <v-icon small class="white-text mr-4 ml-3">
         {{ item.icon }}
       </v-icon>
       {{ item.title }}
@@ -49,7 +46,7 @@ export default {
         },
         {
           title: 'Statistics',
-          icon: 'mdi-chart-areaspline'
+          icon: 'mdi-wave'
         },
         {
           title: 'Friends',
@@ -97,6 +94,8 @@ export default {
   user-select: none;
   position: relative;
   height: 99.8%;
+  color: rgb(156, 148, 148);
+  text-transform: uppercase;
 
   .logoutBtn {
     position: absolute;

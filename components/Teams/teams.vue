@@ -48,7 +48,7 @@
       </v-card>
     </v-dialog>
     <hr class="mb-4">
-    <div>
+    <div class="teamOuter">
       <v-text-field
         dense
         outlined
@@ -56,13 +56,17 @@
         :search-input.sync="search"
         label="Search for team"
       />
-      <v-card 
-        class="pa-5 mb-2" 
-        v-for="(item, index) in teams" 
-        :key="index"
-      >
-        {{ item }}
-      </v-card>
+      <div class="teamInner">
+        <v-card 
+          class="pa-5 mb-2" 
+          v-for="(item, index) in teams" 
+          :key="index"
+        >
+          {{ item.teamname }}
+          <hr>
+          {{ item.description }}
+        </v-card>
+      </div>
     </div>
   </div>
 </template>
@@ -105,6 +109,11 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.teamOuter {
+  .teamInner {
+    height: 50vh;
+    overflow-y: auto;
+  }
+}
 </style>

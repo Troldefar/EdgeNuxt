@@ -63,7 +63,7 @@ export default {
       }
     },
     checkIfFriends (value) {
-      console.log(value);
+      
     }
   },
   computed: {

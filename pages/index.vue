@@ -1,24 +1,32 @@
 <template>
   <div class="pa-10 homeContainer">
-    <Upper />
-    <Middle />
-    <Lower />
+    <Upper class="upper" />
+    <Middle class="lower" />
   </div>
 </template>
 
 <script>
 import Upper from "@/components/Home/Upper";
 import Middle from "@/components/Home/Middle";
-import Lower from "@/components/Home/Lower";
+
 export default {
   components: {
     Upper,
-    Middle,
-    Lower
+    Middle
   }
 }
 </script>
 
 <style lang="scss">
-
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 60px);
+  .upper {
+    flex: 2;
+  }
+  .lower {
+    flex: 1;
+  }
+}
 </style>

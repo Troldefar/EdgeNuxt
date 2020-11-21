@@ -40,7 +40,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 9%;
+  height: calc(100% - 60px);
 
   .saveButton {
     width: 100%;

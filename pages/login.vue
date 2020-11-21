@@ -62,6 +62,7 @@ export default {
     background: rgb(49, 67, 107);
     border-radius: 10px;
     opacity: 0.90;
+    width: 30%;
 
     .loginButton {
       width: 100%;

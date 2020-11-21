@@ -59,8 +59,9 @@ export default {
   background: rgb(103, 36, 103);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Roboto:ital,wght@1,300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+ 
+ 
 /* width */
 ::-webkit-scrollbar {
   width: 0px !important;
@@ -75,9 +76,7 @@ export default {
 }
 
 html, body {
-  height: 100%;
-  font-family: 'Roboto', sans-serif;
-  background: white !important;
+  height: 100%; 
 }
 
 
@@ -88,14 +87,11 @@ html, body {
 .main {
   height: 100%;
   display: flex;
-  background: #2E4397;
-  background: -webkit-linear-gradient(top left, #2E4397, #3675FF);
-  background: -moz-linear-gradient(top left, #2E4397, #3675FF);
-  background: linear-gradient(to bottom right, #2E4397, #3675FF);
+  background: #1c2136;
+  font-family: 'Open Sans Condensed', sans-serif; 
   .menu {
     flex: 1;
-    background-color: #111c33;
-    box-shadow: 0px 0px 0px 2px black;
+    background-color: #464646;
     .CurrentUser {
       position: absolute;
       bottom: 10px;
@@ -105,9 +101,8 @@ html, body {
   .content {
     flex: 10;
     .userMenu {
-      background-color: #14213d;
+      background-color: #1c2136;
       position: relative;
-      box-shadow: 0px 0px 0px 2px black;
       .userBellContainer {
         position: absolute;
         right: 25px;

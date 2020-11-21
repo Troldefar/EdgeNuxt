@@ -8,7 +8,10 @@ export const getters = {
 
 export const mutations = {
   SET (state, teams) {
-    state.teams = teams;
+    state.all = teams;
+  },
+  UPDATE (state, team) {
+    state.all.push(team);
   }
 }
 
