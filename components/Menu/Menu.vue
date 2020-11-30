@@ -94,7 +94,7 @@ export default {
   user-select: none;
   position: relative;
   height: 99.8%;
-  color: rgb(156, 148, 148);
+  color: rgb(189, 179, 179);
   text-transform: uppercase;
 
   .logoutBtn {

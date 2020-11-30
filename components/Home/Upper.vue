@@ -56,13 +56,12 @@
         <div>
           <v-progress-circular 
             color="#0096c7" 
-            :value="20" 
+            :value="54" 
             class="mr-4"
             :size="70"
-            
             :width="10"
           >
-            20
+            54
           </v-progress-circular>
           <span>
             <h1>
@@ -74,12 +73,12 @@
         <div>
           <v-progress-circular 
             color="red" 
-            :value="60" 
+            :value="11" 
             class="mr-4"
             :size="70"
             :width="10"
           >
-            60
+            11
           </v-progress-circular>
           <span>
             <h1>
@@ -91,13 +90,12 @@
         <div>
           <v-progress-circular 
             color="yellow" 
-            :value="40" 
+            :value="32" 
             class="mr-4"
             :size="70"
-            
             :width="10"
           >
-            40
+            32
           </v-progress-circular>
           <span>
             <h1>

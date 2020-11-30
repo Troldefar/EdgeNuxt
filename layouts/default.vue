@@ -91,7 +91,7 @@ html, body {
   font-family: 'Open Sans Condensed', sans-serif; 
   .menu {
     flex: 1;
-    background-color: #464646;
+    background: #1c2136;
     .CurrentUser {
       position: absolute;
       bottom: 10px;
